@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+}
+body {
+  background-image: url(../img/diego-ph-BCuxVP5WEsU-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container-1 {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 35%;
+  height: 550px;
+  display: block;
+  margin: auto ;
+  margin-top: 200px;
+}
+.header li {
+  list-style: none;
+  display: inline-block;
+  padding: 50px 0 30px;
+}
+.header a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 10px 20px;
+}
+.header a:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  border-radius: 15px;
+  color: black;
+}
+
+.EnterCity-input {
+  width: 35%;
+  height: 35px;
+  margin-left: 50px;
+  float: left;
+  border: 1px solid gray;
+}
+.EnterCity-input::placeholder {
+  font-size: 20px;
+  padding: 10px;
+}
+.current-btn {
+  height: 35px;
+  border: none;
+  background-color: #28a745;
+  color: #ffffff;
+  font-size: 15px;
+}
+.Search-input {
+  border: none;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 15px;
+  height: 35px;
+  font-size: 15px;
+}
+.container-input {
+  display: flex;
+}
+.place-temper h3 {
+  margin: 30px 50px 10px;
+}
+.city-temper {
+  margin: 0 50px;
+}
+.icon-moon {
+  margin-left: 50px;
+  margin-top: 30px;
+}
+.description h2 {
+  display: inline;
+  font-size: 60px;
+}
+.span-tag {
+  font-size: 40px;
+}
+.description {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+.right-part {
+  margin-left: 7vw;
+}
+.container {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+}
+.container span {
+  font-size: 35px;
+}
+.container p {
+  text-align: center;
+}
+@media only screen and (max-width: 1600px) {
+  .container-1{
+    width: 100% ;
+    display: block;
+    margin: auto;
+  }
+
+}
