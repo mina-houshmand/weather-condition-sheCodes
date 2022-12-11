@@ -57,16 +57,30 @@ currentDate.innerHTML = `${days[day]} ${hour}:${min}`;
 
 //addding input value to city-name
 
-function printCityName(event){
+function printCityName(event) {
   event.preventDefault();
   let cityNames = document.querySelector("#get-cityname-input");
 
   let userCity = document.querySelector("#city-name");
-  userCity.innerHTML= cityNames.value;
-
+  userCity.innerHTML = cityNames.value;
 }
 
-
-
 let addEventForm = document.querySelector("#get-cityname");
-addEventForm.addEventListener("submit" , printCityName);
+addEventForm.addEventListener("submit", printCityName);
+
+//change degree from Celsius to fahrenheit
+function changetoCelsius() {
+  let temperature = document.querySelector("#temprature");
+  temperature.innerHTML = "10";
+}
+
+function changetoFahrenheit() {
+  let temperature = document.querySelector("#temprature");
+  temperature.innerHTML = "50";
+}
+
+let Celsius = document.querySelector(".span-tag-celc");
+Celsius.addEventListener("click", changetoCelsius);
+
+let fahrenheit = document.querySelector(".span-tag-far");
+fahrenheit.addEventListener("click", changetoFahrenheit);
