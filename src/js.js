@@ -23,39 +23,15 @@ let weather = {
 
 let city = prompt("Enter a acity");
 cityName = city.toLowerCase().trim();
-switch (cityName) {
-  case "paris":
-    alert(
-      `It is currently ${Math.round(
-        weather.paris.temp
-      )}°C in ${cityName} with a humidity of ${weather.paris.humidity}%`
-    );
-    break;
-  case "tokyo":
-    alert(
-      `It is currently ${Math.round(weather.tokyo.temp)}°C in ${cityName} with a humidity of ${weather.tokyo.humidity}%`
-    );
-    break;
-  case "lisbon":
-    alert(
-      `It is currently ${Math.round(
-        weather.lisbon.temp
-      )}°C in ${cityName} with a humidity of ${weather.lisbon.humidity}%`
-    );
-    break;
-  case "san francisco":
-    alert(
-      `It is currently ${Math.round(weather["san francisco"].temp)}°C in ${cityName} with a humidity of ${weather["san francisco"].humidity}%`
-    );
-    break;
-  case "oslo":
-    alert(
-      `It is currently ${Math.round(weather.oslo.temp)}°C in ${cityName} with a humidity of ${weather.oslo.humidity}%`
-    );
-    break;
 
-  default:
-    alert(
-      "Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+sydney"
-    );
+if (cityName) {
+  alert(
+    `It is currently ${Math.round(
+      weather[cityName].temp
+    )}°C in ${cityName} with a humidity of ${weather[cityName].humidity}%`
+  );
+} else {
+  alert(
+    "Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+sydney"
+  );
 }
