@@ -56,7 +56,7 @@ let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = `${days[day]} ${hour}:${min}`;
 
 //addding input value to city-name
-function showTemprature(response) {
+function updateFeatures(response) {
   console.log(response.data);
   var temprature = Math.round(response.data.main.temp);
   let h2 = document.querySelector("#temprature");
@@ -69,6 +69,10 @@ function showTemprature(response) {
   let windSpeed = response.data.wind.speed;
   let windSpeedTag = document.querySelector("#windId");
   windSpeedTag.innerHTML = windSpeed;
+  cityName = response.data.name;
+  let userCity = document.querySelector("#city-name");
+  userCity.innerHTML = cityName;
+
   //change degree from Celsius to fahrenheit
 
   function changetoCelsius() {
@@ -88,26 +92,26 @@ function showTemprature(response) {
 
 // // current buttn
 
-function showLOcation(response) {
-  cityName = response.data.name;
-  let userCity = document.querySelector("#city-name");
-  userCity.innerHTML = cityName;
-  let humidityValue = Math.round(response.data.main.humidity);
-  let humidityTag = document.querySelector("#humidityId");
-  humidityTag.innerHTML = humidityValue;
-  let windSpeed = response.data.wind.speed;
-  let windSpeedTag = document.querySelector("#windId");
-  windSpeedTag.innerHTML = windSpeed;
-  var temprature = Math.round(response.data.main.temp);
-  let h2 = document.querySelector("#temprature");
-  h2.innerHTML = `${temprature}`;
-}
+// function updateFeatures(response) {
+//   cityName = response.data.name;
+//   let userCity = document.querySelector("#city-name");
+//   userCity.innerHTML = cityName;
+//   let humidityValue = Math.round(response.data.main.humidity);
+//   let humidityTag = document.querySelector("#humidityId");
+//   humidityTag.innerHTML = humidityValue;
+//   let windSpeed = response.data.wind.speed;
+//   let windSpeedTag = document.querySelector("#windId");
+//   windSpeedTag.innerHTML = windSpeed;
+//   var temprature = Math.round(response.data.main.temp);
+//   let h2 = document.querySelector("#temprature");
+//   h2.innerHTML = `${temprature}`;
+// }
 function showPosition(position) {
   var lat = position.coords.latitude;
   var lon = position.coords.longitude;
   let apiKey = "d712b24c54cf313c331254715f8095f8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&lon=${lon}&lat=${lat}`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showLOcation);
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(updateFeatures);
 }
 
 function getCurrentLoc() {
@@ -126,7 +130,7 @@ function printCityName(event) {
 
   let apiKey = "d712b24c54cf313c331254715f8095f8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemprature);
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(updateFeatures);
 }
 
 let addEventForm = document.querySelector("#get-cityname");
